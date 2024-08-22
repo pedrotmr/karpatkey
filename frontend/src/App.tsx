@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Assets from "./pages/Assets";
 import Clients from "./pages/Clients";
@@ -16,17 +17,21 @@ export const routes = [
   { to: "/transactions", label: "Transactions", component: <Transactions /> },
 ];
 
+const queryClient = new QueryClient();
+
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<RootLayout />}>
-        {routes.map((route) => (
-          <Route key={route.to} path={route.to} element={route.component} />
-        ))}
-        <Route path="/" element={<Navigate to="/assets" />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          {routes.map((route) => (
+            <Route key={route.to} path={route.to} element={route.component} />
+          ))}
+          <Route path="/" element={<Navigate to="/assets" />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </QueryClientProvider>
 );
 
 export default App;

@@ -4,7 +4,7 @@ import NavBar from "./NavBar";
 const RootLayout = () => (
   <>
     <NavBar />
-    <main className="container py-4">
+    <main className="container py-6">
       <Outlet />
     </main>
   </>
