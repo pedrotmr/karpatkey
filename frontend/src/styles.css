@@ -16,3 +16,9 @@ body {
   font-family: "IBM Plex Mono", sans-serif;
   background-color: var(--off-white);
 }
+
+canvas {
+  min-width: 100% !important;
+  min-height: 100% !important;
+  /* max-height: 400px; */
+}
