@@ -17,7 +17,7 @@ export const mockAssets: Asset[] = [
     value: 45000,
     performance: 5,
     apr: 10,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 45000 + i * 10),
+    performanceOverTime: generatePerformanceOverTime(45000, 10, 365),
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const mockAssets: Asset[] = [
     value: 3000,
     performance: 3,
     apr: 8,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 3000 + i * 5),
+    performanceOverTime: generatePerformanceOverTime(3000, 5, 365),
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const mockAssets: Asset[] = [
     value: 150,
     performance: 2,
     apr: 5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 150 + i * 1),
+    performanceOverTime: generatePerformanceOverTime(150, 1, 365),
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const mockAssets: Asset[] = [
     value: 700,
     performance: 4,
     apr: 6,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 700 + i * 2),
+    performanceOverTime: generatePerformanceOverTime(700, 2, 365),
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ export const mockAssets: Asset[] = [
     value: 1000,
     performance: 1,
     apr: 3,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1000 + i * 0.5),
+    performanceOverTime: generatePerformanceOverTime(1000, 0.5, 365),
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ export const mockAssets: Asset[] = [
     value: 200,
     performance: 2.5,
     apr: 7,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 200 + i * 3),
+    performanceOverTime: generatePerformanceOverTime(200, 3, 365),
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ export const mockAssets: Asset[] = [
     value: 2800,
     performance: 3.5,
     apr: 5.5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 2800 + i * 4),
+    performanceOverTime: generatePerformanceOverTime(2800, 4, 365),
   },
   {
     id: 8,
@@ -80,7 +80,7 @@ export const mockAssets: Asset[] = [
     value: 500,
     performance: 1.5,
     apr: 4,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 500 + i * 0.8),
+    performanceOverTime: generatePerformanceOverTime(500, 0.8, 365),
   },
   {
     id: 9,
@@ -89,7 +89,7 @@ export const mockAssets: Asset[] = [
     value: 1,
     performance: 0.5,
     apr: 2,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1 + i * 0.01),
+    performanceOverTime: generatePerformanceOverTime(1, 0.01, 365),
   },
   {
     id: 10,
@@ -98,7 +98,7 @@ export const mockAssets: Asset[] = [
     value: 3500,
     performance: 4.5,
     apr: 6.5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 3500 + i * 5),
+    performanceOverTime: generatePerformanceOverTime(3500, 5, 365),
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ export const mockAssets: Asset[] = [
     value: 0.1,
     performance: -1,
     apr: 0.5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 0.1 + i * -0.01),
+    performanceOverTime: generatePerformanceOverTime(0.1, -0.01, 365),
   },
   {
     id: 12,
@@ -116,7 +116,7 @@ export const mockAssets: Asset[] = [
     value: 2500,
     performance: -2,
     apr: 4,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 2500 + i * -3),
+    performanceOverTime: generatePerformanceOverTime(2500, -3, 365),
   },
   {
     id: 13,
@@ -125,7 +125,7 @@ export const mockAssets: Asset[] = [
     value: 50,
     performance: -3,
     apr: 1,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 50 + i * -0.5),
+    performanceOverTime: generatePerformanceOverTime(50, -0.5, 365),
   },
   {
     id: 14,
@@ -134,7 +134,7 @@ export const mockAssets: Asset[] = [
     value: 500,
     performance: 2,
     apr: 4,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 500 + i * 2),
+    performanceOverTime: generatePerformanceOverTime(500, 2, 365),
   },
   {
     id: 15,
@@ -143,7 +143,7 @@ export const mockAssets: Asset[] = [
     value: 1800,
     performance: 1.5,
     apr: 3,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1800 + i * 1),
+    performanceOverTime: generatePerformanceOverTime(1800, 1, 365),
   },
   {
     id: 16,
@@ -152,7 +152,7 @@ export const mockAssets: Asset[] = [
     value: 350,
     performance: 3,
     apr: 5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 350 + i * 1.5),
+    performanceOverTime: generatePerformanceOverTime(350, 1.5, 365),
   },
   {
     id: 17,
@@ -161,9 +161,8 @@ export const mockAssets: Asset[] = [
     value: 1.2,
     performance: 0.5,
     apr: 1,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1.2 + i * 0.01),
+    performanceOverTime: generatePerformanceOverTime(1.2, 0.01, 365),
   },
-
   {
     id: 19,
     name: "Intel Stock",
@@ -171,7 +170,7 @@ export const mockAssets: Asset[] = [
     value: 60,
     performance: -1.5,
     apr: 2,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 60 + i * -0.5),
+    performanceOverTime: generatePerformanceOverTime(60, -0.5, 365),
   },
   {
     id: 20,
@@ -180,7 +179,7 @@ export const mockAssets: Asset[] = [
     value: 1000,
     performance: 1,
     apr: 2.5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1000 + i * 0.5),
+    performanceOverTime: generatePerformanceOverTime(1000, 0.5, 365),
   },
   {
     id: 21,
@@ -189,7 +188,7 @@ export const mockAssets: Asset[] = [
     value: 10,
     performance: -2.5,
     apr: 0,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 10 + i * -0.1),
+    performanceOverTime: generatePerformanceOverTime(10, -0.1, 365),
   },
   {
     id: 22,
@@ -198,7 +197,7 @@ export const mockAssets: Asset[] = [
     value: 25,
     performance: 1,
     apr: 2,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 25 + i * 0.5),
+    performanceOverTime: generatePerformanceOverTime(25, 0.5, 365),
   },
   {
     id: 23,
@@ -207,7 +206,7 @@ export const mockAssets: Asset[] = [
     value: 2000,
     performance: 1.5,
     apr: 2.5,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 2000 + i * 1),
+    performanceOverTime: generatePerformanceOverTime(2000, 1, 365),
   },
   {
     id: 24,
@@ -216,7 +215,7 @@ export const mockAssets: Asset[] = [
     value: 800,
     performance: 1,
     apr: 2,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 800 + i * 0.5),
+    performanceOverTime: generatePerformanceOverTime(800, 0.5, 365),
   },
   {
     id: 25,
@@ -225,6 +224,22 @@ export const mockAssets: Asset[] = [
     value: 1200,
     performance: 1.2,
     apr: 2.2,
-    performanceOverTime: Array.from({ length: 365 }, (_, i) => 1200 + i * 0.8),
+    performanceOverTime: generatePerformanceOverTime(1200, 0.8, 365),
   },
 ];
+
+function generatePerformanceOverTime(
+  startValue: number,
+  volatility: number,
+  length: number
+): number[] {
+  const performanceOverTime: number[] = [];
+  let currentValue = startValue;
+  for (let i = 0; i < length; i++) {
+    const random = Math.random() - 0.5;
+    const change = currentValue * (volatility / 100) * random;
+    currentValue += change;
+    performanceOverTime.push(currentValue);
+  }
+  return performanceOverTime;
+}
