@@ -20,8 +20,9 @@ CryptoCustodian is a web application designed to provide an intuitive and user-f
 1. **Clone the repository**:
 
    ```sh
-   git clone https://github.com/pedrotmr/karpatkey-assessment
-   cd karpatkey-assessment
+   git clone https://github.com/pedrotmr/karpatkey
+   
+   cd karpatkey
    ```
 
 2. **Build and run the project using Docker Compose**:
